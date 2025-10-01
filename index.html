@@ -2,77 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tech Docs</title>
-  <link rel="stylesheet" href="Style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programming Fundamentals — Tech Docs</title>
+  <meta name="description" content="A concise, professional technical documentation page covering programming fundamentals: variables, control flow, functions, and debugging." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav id="navbar">
-    <header>Programming Fundamentals</header>
-    <a href="#Introduction" class="nav-link">Introduction</a>
-    <a href="#Variables_and_Data_Types" class="nav-link">Variables and Data Types</a>
-    <a href="#Control_Flow" class="nav-link">Control Flow</a>
-    <a href="#Functions" class="nav-link">Functions</a>
-    <a href="#Debugging_Tips" class="nav-link">Debugging Tips</a>
+  <!-- Accessibility: skip link for keyboard users -->
+  <a class="skip-link" href="#main-doc">Skip to content</a>
+
+  <!-- Sidebar / Topbar nav -->
+  <nav id="navbar" aria-label="On this page">
+    <h1 class="site-title">Programming Fundamentals</h1>
+    <ul class="toc">
+      <li><a href="#introduction" class="nav-link">Introduction</a></li>
+      <li><a href="#variables-and-data-types" class="nav-link">Variables &amp; Data Types</a></li>
+      <li><a href="#control-flow" class="nav-link">Control Flow</a></li>
+      <li><a href="#functions" class="nav-link">Functions</a></li>
+      <li><a href="#debugging-tips" class="nav-link">Debugging Tips</a></li>
+    </ul>
   </nav>
 
-  <main id="main-doc">
-    <section class="main-section" id="Introduction">
-      <header>Introduction</header>
-      <p>Programming is the art of telling a computer what to do through instructions.</p>
-      <p>In this guide, we'll explore programming concepts step-by-step.</p>
-      <p>Whether you're new or brushing up, you'll find something useful here.</p>
-      <code>print("Hello, world!")</code>
-      <p>This is your starting point in many languages.</p>
+  <main id="main-doc" role="main">
+    <header class="page-header">
+      <p class="tagline">A quick, practical guide to core concepts you’ll use every day.</p>
+    </header>
+
+    <section class="main-section" id="introduction" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Introduction</h2>
+      <p>Programming is the craft of giving computers clear, testable instructions. This guide walks through core ideas you’ll encounter in any language.</p>
+      <p>Whether you’re starting out or refreshing fundamentals, these sections focus on concepts that transfer across ecosystems.</p>
+      <pre><code class="language-python">print("Hello, world!")</code></pre>
+      <p>“Hello, world!” is a traditional first step: it checks your toolchain and output.</p>
     </section>
 
-    <section class="main-section" id="Variables_and_Data_Types">
-      <header>Variables and Data Types</header>
-      <p>Variables are containers for storing data values.</p>
-      <code>let age = 30;</code>
-      <p>Data types include strings, numbers, booleans, and more.</p>
+    <section class="main-section" id="variables-and-data-types" aria-labelledby="vars-heading">
+      <h2 id="vars-heading">Variables &amp; Data Types</h2>
+      <p>Variables store values you’ll reuse or transform. Good names improve readability and maintenance.</p>
+      <pre><code class="language-javascript">let age = 30;</code></pre>
+      <p>Common data types:</p>
       <ul>
-        <li>String</li>
-        <li>Number</li>
-        <li>Boolean</li>
+        <li><strong>String</strong> — text values: <code>"Waldo"</code></li>
+        <li><strong>Number</strong> — integers or floats: <code>42</code>, <code>3.14</code></li>
+        <li><strong>Boolean</strong> — truth values: <code>true</code> or <code>false</code></li>
       </ul>
-      <p>They help you structure your program effectively.</p>
-      <code>const name = "Waldo";</code>
+      <p>Use <code>const</code> for values that don’t change; prefer <code>let</code> when reassignment is required.</p>
+      <pre><code class="language-javascript">const name = "Waldo";</code></pre>
     </section>
 
-    <section class="main-section" id="Control_Flow">
-      <header>Control Flow</header>
-      <p>This refers to the order in which individual statements are executed.</p>
-      <code>if (true) { console.log("Yes!"); }</code>
-      <p>Conditional statements let your program make decisions.</p>
-      <p>Loops allow repetition based on conditions.</p>
+    <section class="main-section" id="control-flow" aria-labelledby="flow-heading">
+      <h2 id="flow-heading">Control Flow</h2>
+      <p>Control flow is the order in which statements run. Conditionals branch execution; loops repeat work.</p>
+      <pre><code class="language-javascript">if (Math.random() &gt; 0.5) {
+  console.log("Heads");
+} else {
+  console.log("Tails");
+}</code></pre>
       <ul>
-        <li>if / else</li>
-        <li>switch</li>
-        <li>for / while loops</li>
+        <li><strong>Conditionals:</strong> <code>if</code>, <code>else</code>, <code>switch</code></li>
+        <li><strong>Loops:</strong> <code>for</code>, <code>while</code>, <code>for...of</code></li>
       </ul>
     </section>
 
-    <section class="main-section" id="Functions">
-      <header>Functions</header>
-      <p>Functions group code into reusable blocks.</p>
-      <code>function greet() { return "Hi!"; }</code>
-      <p>They help reduce repetition and increase modularity.</p>
-      <p>You can pass data into functions using parameters.</p>
-      <code>greet("Waldo");</code>
+    <section class="main-section" id="functions" aria-labelledby="fn-heading">
+      <h2 id="fn-heading">Functions</h2>
+      <p>Functions package logic into reusable units with clear inputs and outputs.</p>
+      <pre><code class="language-javascript">function greet(name = "friend") {
+  return `Hi, ${name}!`;
+}</code></pre>
+      <p>Parameters pass data in; return values pass results out.</p>
+      <pre><code class="language-javascript">greet("Waldo"); // "Hi, Waldo!"</code></pre>
     </section>
 
-    <section class="main-section" id="Debugging_Tips">
-      <header>Debugging Tips</header>
-      <p>Debugging is the process of fixing errors in your code.</p>
-      <code>console.log("Step reached");</code>
+    <section class="main-section" id="debugging-tips" aria-labelledby="debug-heading">
+      <h2 id="debug-heading">Debugging Tips</h2>
+      <p>Debugging is systematic problem-solving. Isolate, measure, and verify.</p>
       <ul>
-        <li>Use breakpoints</li>
-        <li>Log output to console</li>
-        <li>Read error messages carefully</li>
+        <li>Set <strong>breakpoints</strong> to inspect state and step through code.</li>
+        <li>Use <code>console.log</code> (sparingly) to trace values.</li>
+        <li>Read error messages <em>carefully</em>; they often tell you exactly where to look.</li>
       </ul>
-      <p>Practice and patience are key.</p>
+      <pre><code class="language-javascript">console.log("Reached point A", { value, index });</code></pre>
+      <p>Patience and a repeatable process are your best tools.</p>
     </section>
+
+    <footer class="page-footer">
+      <a href="#top" class="back-to-top">Back to top ↑</a>
+    </footer>
   </main>
 </body>
 </html>
+
