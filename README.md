@@ -1,3 +1,11 @@
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0ea5e9)](https://GalladeX3.github.io/<this-repo-name>/)
+
+<div align="center">
+  <a href="https://GalladeX3.github.io/<this-repo-name>/">
+    <img src="./doc/documentation-page-screenshot.jpeg" alt="Desktop view of the documentation page" width="720" />
+  </a>
+</div>
+
 ![Desktop view of the documentation page](./docs/documentation-page-screenshot.jpeg)
 
 Programming Fundamentals — Tech Docs
