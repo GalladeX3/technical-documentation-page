@@ -1,4 +1,4 @@
-![Desktop view of the documentation page](./doc/documentation-page-screenshot.jpeg)
+![Desktop view of the documentation page](./docs/documentation-page-screenshot.jpeg)
 
 
 Programming Fundamentals — Tech Docs
