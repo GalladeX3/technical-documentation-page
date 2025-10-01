@@ -1,7 +1,7 @@
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0ea5e9)](https://GalladeX3.github.io/<this-repo-name>/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0ea5e9)](https://galladex3.github.io/technical-documentation-page/)
 
 <div align="center">
-  <a href="https://GalladeX3.github.io/<this-repo-name>/">
+  <a href="https://galladex3.github.io/technical-documentation-page/">
     <img src="./doc/documentation-page-screenshot.jpeg" alt="Desktop view of the documentation page" width="720" />
   </a>
 </div>
