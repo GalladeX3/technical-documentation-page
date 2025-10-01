@@ -1,56 +1,185 @@
+/* ---------- Base & Theme ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;         /* slate-900 */
+  --muted: #475569;        /* slate-600 */
+  --border: #e5e7eb;       /* gray-200 */
+  --code-bg: #0b1220;      /* deep indigo */
+  --code-text: #e2e8f0;    /* slate-200 */
+  --accent: #38bdf8;       /* sky-400 */
+  --accent-strong: #0ea5e9;/* sky-500 */
+  --nav-bg: #0f172a;       /* slate-900 */
+  --nav-text: #e2e8f0;     /* slate-200 */
+  --nav-muted: #94a3b8;    /* slate-400 */
+  --max-w: 70ch;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  display: flex;
   margin: 0;
-  font-family: sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100dvh;
 }
 
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem;
+  background: var(--accent);
+  color: #001018;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  outline: 2px solid #000;
+}
+
+/* ---------- Sidebar / Nav ---------- */
 #navbar {
-  width: 220px;
-  min-height: 100vh;
-  background: #20232a;
-  color: #61dafb;
-  position: fixed;
-  padding: 20px;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 24px;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  border-right: 1px solid #111827;
+  min-height: 100dvh;
 }
 
-#navbar header {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+.site-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.25rem;
 }
 
 .nav-link {
   display: block;
-  margin: 10px 0;
-  color: #61dafb;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--nav-text);
   text-decoration: none;
+  border: 1px solid transparent;
+}
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(148, 163, 184, 0.25);
+  outline: none;
+}
+.nav-link:active {
+  background: rgba(14, 165, 233, 0.2);
 }
 
+/* ---------- Main Content ---------- */
 #main-doc {
-  margin-left: 240px;
-  padding: 20px;
-  flex: 1;
+  padding: 32px clamp(16px, 4vw, 48px);
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .main-section {
-  margin-bottom: 40px;
+  margin: 2.5rem 0;
+  scroll-margin-top: 24px; /* make anchor jumps pleasant under sticky nav on mobile */
+  max-width: var(--max-w);
 }
 
-code {
-  display: block;
-  background-color: #f4f4f4;
-  padding: 10px;
-  margin: 10px 0;
-  font-family: monospace;
+.main-section h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1.35rem, 2vw + 0.5rem, 1.75rem);
+  line-height: 1.2;
 }
 
-@media (max-width: 768px) {
+.main-section p,
+.main-section li {
+  font-size: 1rem;
+}
+
+ul { padding-left: 1.2rem; }
+
+code,
+pre,
+code * { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+/* Inline code */
+p code, li code {
+  background: #f3f4f6;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--border);
+}
+
+/* Code blocks */
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow: auto;
+  border: 1px solid #111827;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+pre + p { margin-top: 0.5rem; }
+
+.page-footer {
+  margin: 3rem 0 1rem 0;
+  max-width: var(--max-w);
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: var(--accent-strong);
+}
+.back-to-top:hover { text-decoration: underline; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  body {
+    grid-template-columns: 1fr;
+  }
   #navbar {
-    position: relative;
-    width: 100%;
+    position: sticky;
     min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #1f2937;
   }
+  .toc {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.5rem;
+  }
+}
 
-  #main-doc {
-    margin-left: 0;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
