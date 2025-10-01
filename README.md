@@ -1,3 +1,6 @@
+![Desktop view of the documentation page](./doc/documentation-page-screenshot.jpeg)
+
+
 Programming Fundamentals — Tech Docs
 
 A lightweight, professional technical documentation page built with semantic HTML and modern, accessible CSS. It presents core programming concepts—variables, control flow, functions, and debugging—in a clean, responsive layout with a sticky sidebar that adapts to mobile.
